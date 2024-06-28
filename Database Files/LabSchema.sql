@@ -1,0 +1,16 @@
+USE HospitalManagement;
+
+CREATE TABLE Labwork(
+	workID INT IDENTITY(100, 1) NOT NULL UNIQUE,
+	TestName VARCHAR(25) NOT NULL,
+	PatientID INT NOT NULL,
+	DoctorID INT NOT NULL,
+	TestDate DATE NOT NULL,
+	Results VARCHAR(255) NOT NULL,
+	testStatus VARCHAR(9) NOT NULL,
+	Notes VARCHAR(255) NOT NULL,
+
+	PRIMARY KEY(workID),
+	FOREIGN KEY(PatientID) REFERENCES Patient.Personal(PatientID),
+	FOREIGN KEY(DoctorID) REFERENCES Staff.Doctor(DoctorID)
+);

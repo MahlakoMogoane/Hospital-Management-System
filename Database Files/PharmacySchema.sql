@@ -1,0 +1,10 @@
+USE HospitalManagement;
+
+CREATE TABLE Pharmacy(
+	MedID INT IDENTITY(100, 1) NOT NULL UNIQUE,
+	MedName VARCHAR(25) NOT NULL,
+	NumAvailable INT NOT NULL,
+	Dosage VARCHAR(25) NOT NULL,
+	ExpiryDate DATE NOT NULL,
+	SupplierID INT NOT NULL
+);
